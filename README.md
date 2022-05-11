@@ -4,7 +4,7 @@
 
 # Resumo do Projeto
 
-O Desafio proposto na primeira avaliação será a criação de uma API utilizando NodeJS, Mongo para armazenar as informações de jogadores. Devendo conter um CRUD para cadastrar as informações de cadastro de usuário, como nome do jogador e coin (moedas), salvando a quantidade de moedas que o jogador possui. Tendo como diferencial que as informações de medalhas e troféus não serão ser salvas no banco, e sim calculados no momento em que a API for responder.
+O Desafio proposto na primeira avaliação é a criação de uma API utilizando NodeJS, Mongo para armazenar as informações de jogadores. Devendo conter um CRUD para cadastrar as informações de cadastro de usuário, como nome do jogador e coin (moedas), salvando a quantidade de moedas que o jogador possui. Tendo como diferencial que as informações de medalhas e troféus não serão ser salvas no banco, e sim calculados no momento em que a API for responder. Ao final da realização deve ser utilizado o conceito de TDD para o desenvolvimento dos testes. 
 
 <br>
 
