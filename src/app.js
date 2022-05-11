@@ -13,6 +13,6 @@ const criacao = [
 ];
 
 function buscaUsuario(id) {
-  return livros.findIndex((cadastro) => cadastro.id == id);
+  return usuario.findIndex((cadastro) => cadastro.id == id);
 }
 export default app;
