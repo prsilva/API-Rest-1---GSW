@@ -1,30 +1,43 @@
-import user from '../models/user.js';
+const {
+  editaUser,
+  deletarUser,
+  leituraUser,
+  criarUser,
+} = require('../services/userService.js');
 
-export const criarUser = (req, res) => {
-  const { nome, coins } = req.body;
-  user.create({ nome, coins }, (error, usr) => {
-    if (error) {
-      res.status(500).json(error);
-    } else {
-      res.status(201).json({ msg: 'Usuario criado com sucesso', data: usr });
-    }
-  });
+const leituraUser = async function leituraUser(req, res){
+
+  const jogadorResponse = await lerJogador();
+
+  res.status(200).json(jogadorResponse);
 };
 
-export const editaUser = (req, res) => {
+const criarUser = async function cadastrarUser(req, res){
+  let user = await criarUser(req.body);
+  user.save((err)) => {
+    if (err) {
+      res.send(`Erro no cadastro do jogador` Erro:${err.message}`);
+    }
+    else {
+      res.status(201).send( msg: 'Usuario cadastrado com sucesso');
+    }
+  })
+};
+
+const editaUser = (req, res) => {
   const id = req.params.id;
-  user.findOneAndUpdate({ _id: id }, req.body, { new: true }, (error, usr) => {
-    if (error) {
-      res.status(500).json(error);
-    } else {
-      res
-        .status(200)
-        .json({ msg: 'Usuario atualizado com sucesso', data: usr });
-    }
-  });
-};
 
-export const leituraUser = (req, res) => {
+    try {
+      atualizaUser(id, req.body);
+      res.status(201).send('Atualziado com sucesso!');
+    } catch (error) {
+      res
+      res.send(`Houve um erro na hora de atualizar o jogador! Erro: ${error}`);
+    }
+  }
+
+
+/* const leituraUser = (req, res) => {
   user.find({}, (error, usr) => {
     if (error) {
       res.status(500).json(error);
@@ -37,15 +50,22 @@ export const leituraUser = (req, res) => {
       res.status(200).json({ msg: 'Usuarios encontrados', data: usuarios });
     }
   });
-};
+}; */
 
-export const deletarUser = (req, res) => {
+const deletarUser = (req, res) => {
   const id = req.params.id;
-  user.findOneAndDelete({ _id: id }, req.body, (error, usr) => {
-    if (error) {
-      res.status(500).json(error);
-    } else {
-      res.status(200).json({ msg: 'Usuario excluido', data: usr });
+
+  try {
+        deletaUser(id);
+        res.status(201).send('Deletado com sucesso!');
+    } catch (error) {
+        res.send(`Houve um erro na hora de deletar o jogador! Erro: ${error}`);
     }
-  });
-};
+}
+
+module.exports = {
+  editaUser,
+  deletarUser,
+  leituraUser,
+  criarUser
+} 

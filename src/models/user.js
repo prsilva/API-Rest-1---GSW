@@ -1,8 +1,14 @@
-import db from '../config/dbConnect.js';
+const mongoose = require('mongoose');
 
-const user = new db.Schema({
-  nome: { type: String, required: true },
-  coins: { type: Number, required: true },
-});
+const user = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    coins: { type: Number, required: true },
+  },
+  {
+    versionKey: false,
+  },
+);
 
-export default db.model('User', user);
+module.exports =
+  mongoose.models.jogadores || mongoose.model('User', jogadorSchema);

@@ -6,16 +6,20 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/findUserList.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "should": "^13.2.3"
   },
   "dependencies": {
+    "chai": "^4.3.6",
     "express": "^4.18.1",
-    "mongoose": "^6.3.3"
+    "mocha": "^10.0.0",
+    "mongoose": "^6.3.3",
+    "simon": "^0.2.3"
   }
 }
