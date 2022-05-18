@@ -1,19 +1,19 @@
-const jogadores = require('../models/user.js');
+const user = require('../models/user.js');
 
-const userFind = async () => {
-  return jogadores.find().lean();
+const leituraUser = async () => {
+  return user.find().lean();
 };
 
-const userDelete = async (id) => {
-  return jogadores.findByIdAndDelete(id);
+const deletarUser = async (id) => {
+  return user.findByIdAndDelete(id);
 };
 
-const userUpdate = async (id, content) => {
-  return jogadores.findByIdAndUpdate(id, { $set: content });
+const editaUser = async (id, content) => {
+  return user.findByIdAndUpdate(id, { $set: content });
 };
 
-const userCreate = async (body) => {
-  return new jogadores(body);
+const criarUser = async (body) => {
+  return new user(body);
 };
 
 module.exports = {

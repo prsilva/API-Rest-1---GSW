@@ -20,14 +20,14 @@ const {
   deletarUser,
   leituraUser,
   criarUser,
-} = require('../controllers/jogadorController.js');
+} = require('../controllers/userController.js');
 
 const router = express.Router();
 
 router
-  .get('/jogadores', leituraUser)
-  .post('/jogadores', criarUser)
-  .put('/jogadores/:id', editaUser)
-  .delete('/jogadores/:id', deletarUser);
+  .get('/', leituraUser)
+  .post('/', criarUser)
+  .put('/:id', editaUser)
+  .delete('/:id', deletarUser);
 
 module.exports = router;

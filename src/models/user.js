@@ -10,5 +10,4 @@ const user = new mongoose.Schema(
   },
 );
 
-module.exports =
-  mongoose.models.jogadores || mongoose.model('User', jogadorSchema);
+module.exports = mongoose.models.user || mongoose.model('user', jogadorSchema);

@@ -19,7 +19,7 @@ export default app; */
 
 const express = require('express');
 const db = require('./dbConnect.js');
-const jogadores = require('./models/user.js');
+const user = require('./models/user.js');
 const routes = require('./routes/indexRouter.js');
 
 db.on(
