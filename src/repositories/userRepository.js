@@ -13,7 +13,8 @@ const editaUser = async (id, content) => {
 };
 
 const criarUser = async (body) => {
-  return new user(body);
+  const usuario = new user(body);
+  return usuario.save()
 };
 
 module.exports = {

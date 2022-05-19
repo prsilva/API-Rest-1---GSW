@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const user = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     coins: { type: Number, required: true },
@@ -10,4 +10,4 @@ const user = new mongoose.Schema(
   },
 );
 
-module.exports = mongoose.models.user || mongoose.model('user', jogadorSchema);
+module.exports = mongoose.models.user || mongoose.model('user', userSchema);

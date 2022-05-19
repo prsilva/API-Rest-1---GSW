@@ -1,5 +1,5 @@
 const should = require('should');
-const findUser = require('../findUser.js');
+const findUser = require('./findUser.js');
 
 describe('find users', () => {
   it('soma users', () => {
