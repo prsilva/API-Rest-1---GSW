@@ -6,14 +6,14 @@ const encontraUser = (nome) => {
   try {
     validacao(nome);
     const userEncontrado = listaUser.find((user) => user === nome);
-    return userEncontrado ? userEncontrado : 'Usuario nao encontrado';
+    return userEncontrado ? userEncontrado : 'Usuario não encontrado';
   } catch (erro) {
     return erro;
   }
 };
 
 const validacao = (nome) => {
-  if (!nome) throw 'Campo nome esta vazio';
+  if (!nome) throw 'Campo nome está vazio';
   if (typeof nome !== 'string') throw 'Tipo invalido';
 };
 
