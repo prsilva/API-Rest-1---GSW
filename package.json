@@ -3,23 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "mocha tests/findUserList.js"
+    "test": "mocha ./src/tests/findUserList.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.16",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "sinon": "^14.0.0"
   },
   "dependencies": {
     "chai": "^4.3.6",
     "express": "^4.18.1",
     "mocha": "^10.0.0",
-    "mongoose": "^6.3.3",
-    "simon": "^0.2.3"
+    "mongoose": "^6.3.3"
   }
 }
