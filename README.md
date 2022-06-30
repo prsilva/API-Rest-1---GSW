@@ -33,6 +33,8 @@ O Desafio proposto na primeira avaliação é a criação de uma API utilizando 
 
 - `MongoDB`
 - `Mongoose`
+- `AngularJS`
+- `Bootstrap`
 - `NodeJS`
 - `Express`
 - `Mocha`
