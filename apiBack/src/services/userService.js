@@ -1,22 +1,22 @@
 const repository = require('../repositories/userRepository.js');
 
 const leituraUser = async () => {
-  const userResponse = await repository.leituraUser();
+  const userResponse = await repository.lerJogador();
   const resposta = userResponse.map(calculateMedalsAndTrophies);
 
   return resposta;
 };
 
 const deletarUser = async (id) => {
-  return repository.deletarUser(id);
+  return repository.deletaJogador(id);
 };
 
 const editaUser = async (id, content) => {
-  return repository.editaUser(id, content);
+  return repository.editaJogador(id, content);
 };
 
 const criarUser = async (body) => {
-  return repository.criarUser(body);
+  return repository.criarJogador(body);
 };
 
 //funções de regras de negócios

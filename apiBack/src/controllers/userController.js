@@ -5,13 +5,13 @@ const {
   criarUser,
 } = require('../services/userService.js');
 
-const leituraUser = async function leituraUser(req, res) {
-  const userResponse = await lerUsuario();
+const lerUser = async (req, res) => {
+  const userResponse = await leituraUser();
 
   res.status(200).json(userResponse);
 };
 
-const criarUser = async function userCadastro(req, res) {
+const criaUser = async (req, res) => {
   try {
     const dadoJogador = req.body;
     await criarUser(dadoJogador);
@@ -21,7 +21,7 @@ const criarUser = async function userCadastro(req, res) {
   }
 };
 
-const editaUser = (req, res) => {
+const atualizaUser = (req, res) => {
   const id = req.params.id;
   const dadoJogador = req.body;
   try {
@@ -32,7 +32,7 @@ const editaUser = (req, res) => {
   }
 };
 
-const deletarUser = (req, res) => {
+const deletaUser = (req, res) => {
   const id = req.params.id;
 
   try {
@@ -44,8 +44,8 @@ const deletarUser = (req, res) => {
 };
 
 module.exports = {
-  editaUser,
-  deletarUser,
-  leituraUser,
-  criarUser,
+  atualizaUser,
+  deletaUser,
+  lerUser,
+  criaUser,
 };
