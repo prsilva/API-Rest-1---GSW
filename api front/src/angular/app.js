@@ -4,11 +4,7 @@ crud.controller('controller', function ($scope) {
   $scope.novoCadastro = {};
   $scope.cadastroSelecionado = {};
 
-  $scope.cadastros = [
-    { nome: '', moedas: '', trofeus: '', medalhas: '' },
-    { nome: '', moedas: '', trofeus: '', medalhas: '' },
-    { nome: '', moedas: '', trofeus: '', medalhas: '' },
-  ];
+  $scope.cadastros = [];
 
   $scope.salvar = function () {
     $scope.cadastros.push($scope.novoCadastro);

@@ -1,6 +1,7 @@
-const app = require('./src/app.js');
-const port = process.env.PORT || 3000;
+const mongoose = require('mongoose');
 
-app.listen(port, () => {
-  console.log(`servidor escutando na porta http://localhost:${port}`);
-});
+mongoose.connect(process.env.DB_URL);
+
+let db = mongoose.connection;
+
+module.exports = db;
