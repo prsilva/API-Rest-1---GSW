@@ -1,44 +1,62 @@
-require('.angular.min.js');
+require('angular');
 require('angular-mocks');
-require('..app.js');
+require('../app.js');
 
 describe('Users Controller', function () {
   beforeEach(function () {
-    angular.mock.module('api');
+    angular.mock.module('crud');
   });
 
   const fakePromise = () => new Promise((resolve) => resolve);
 
   const _usersAPI = {
-    readPlayers: fakePromise,
+    carregaJogador: fakePromise,
     createPlayer: fakePromise,
-    deletePlayer: fakePromise,
-    updatePlayer: fakePromise,
   };
 
   let controller;
   let rootScope;
+  let httpBackend;
 
-  beforeEach(inject(($controller, $rootScope) => {
+  beforeEach(inject(($controller, $rootScope, $httpBackend) => {
     rootScope = $rootScope;
     controller = $controller;
+    httpBackend = $httpBackend;
   }));
 
-  describe('Order controller', function () {
-    it('should return the right criterion and direction of the order', function () {
+  describe('Controller', function () {
+    it('se esta passando ou nao', function () {
       const vm = newControllerInstance();
-      vm.orderBy('A-Z');
 
-      expect(vm.orderCriterion).toEqual('name');
-      expect(vm.orderDirection).toEqual(false);
+      expect(vm.cadastros).toEqual([]);
+    });
+    it('se esta diferente', async function () {
+      const vm = newControllerInstance();
+      httpBackend.whenGET('http://localhost:3000/visualizar').respond(200, [
+        {
+          name: 'Priscila',
+          coins: 10,
+        },
+      ]);
+      httpBackend.flush();
+      expect(vm.cadastros).toEqual([
+        {
+          name: 'Priscila',
+          coins: 10,
+        },
+      ]);
+    });
+    it('se esta criando', function () {
+      const vm = newControllerInstance();
+      vm.selecionaCadastro({ name: 'lucas', coins: 4 });
+      expect(vm.cadastroSelecionado).toEqual({ name: 'lucas', coins: 4 });
     });
   });
 
   function newControllerInstance() {
     const scope = rootScope.$new();
-    controller('mainController', {
+    controller('controller', {
       $scope: scope,
-      usersAPI: _usersAPI,
     });
 
     return scope;

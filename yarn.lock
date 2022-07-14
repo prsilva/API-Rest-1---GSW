@@ -133,10 +133,10 @@
   "resolved" "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.8.3.tgz"
   "version" "1.8.3"
 
-"angular@^1.6.0":
-  "integrity" "sha512-2iYr9Jkh2HNQjKUnsF48ej+BdB93VA98blnc5t5XvaxPntjGKj4Lu1juZC+i7/5g8w7FeJ/dSSCuij2XquxrJQ=="
-  "resolved" "https://registry.npmjs.org/angular/-/angular-1.6.0.tgz"
-  "version" "1.6.0"
+"angular@^1.6.6":
+  "integrity" "sha512-5qjkWIQQVsHj4Sb5TcEs4WZWpFeVFHXwxEBHUhrny41D8UrBAd6T/6nPPAsLngJCReIOqi95W3mxdveveutpZw=="
+  "resolved" "https://registry.npmjs.org/angular/-/angular-1.8.3.tgz"
+  "version" "1.8.3"
 
 "ansi-align@^3.0.0":
   "integrity" "sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w=="
@@ -624,10 +624,10 @@
   dependencies:
     "node-int64" "^0.4.0"
 
-"bson@^4.6.2":
-  "integrity" "sha512-rAqP5hcUVJhXP2MCSNVsf0oM2OGU1So6A9pVRDYayvJ5+hygXHQApf87wd5NlhPM1J9RJnbqxIG/f8QTzRoQ4A=="
-  "resolved" "https://registry.npmjs.org/bson/-/bson-4.6.3.tgz"
-  "version" "4.6.3"
+"bson@^4.6.2", "bson@^4.6.5":
+  "integrity" "sha512-uqrgcjyOaZsHfz7ea8zLRCLe1u+QGUSzMZmvXqO24CDW7DWoW1qiN9folSwa7hSneTSgM2ykDIzF5kcQQ8cwNw=="
+  "resolved" "https://registry.npmjs.org/bson/-/bson-4.6.5.tgz"
+  "version" "4.6.5"
   dependencies:
     "buffer" "^5.6.0"
 
@@ -3063,7 +3063,19 @@
     "@types/whatwg-url" "^8.2.1"
     "whatwg-url" "^11.0.0"
 
-"mongodb@^4.5.0", "mongodb@4.5.0":
+"mongodb@^4.8.0":
+  "integrity" "sha512-a0eVzm1e1kxwnzJV1wZXIS54KegM2y6wXTXOGTSAxr/E2YOUkl/zGBHNSI4z+6z+YQtVdzDqy1nJ4n5MxYJRnQ=="
+  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.8.0.tgz"
+  "version" "4.8.0"
+  dependencies:
+    "bson" "^4.6.5"
+    "denque" "^2.0.1"
+    "mongodb-connection-string-url" "^2.5.2"
+    "socks" "^2.6.2"
+  optionalDependencies:
+    "saslprep" "^1.0.3"
+
+"mongodb@4.5.0":
   "integrity" "sha512-A2l8MjEpKojnhbCM0MK3+UOGUSGvTNNSv7AkP1fsT7tkambrkkqN/5F2y+PhzsV0Nbv58u04TETpkaSEdI2zKA=="
   "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.5.0.tgz"
   "version" "4.5.0"

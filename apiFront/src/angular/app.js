@@ -17,6 +17,7 @@ crud.controller('controller', function ($scope, $http) {
   $scope.salvar = function (jogadorNovo) {
     $http.post('http://localhost:3000/criar', jogadorNovo).then(() => {
       delete $scope.cadastros;
+      $scope.message = 'concluido';
       carregaJogador();
     });
   };
